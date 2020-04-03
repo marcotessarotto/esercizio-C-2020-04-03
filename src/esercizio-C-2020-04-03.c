@@ -111,11 +111,11 @@ contact_type * create_contact(char * name, char * phone){
 }
 
 void print_contact(contact_type * person){
-	printf("\nInformazioni sul contatto:");
+	printf("\nperson:");
 
-	printf("\n\tid : %d", person->id);
-	printf("\n\tnome : %s", person->name);
-	printf("\n\tnumero di telefono : %s", person->phone);
+	printf("\tid : %d, ", person->id);
+	printf("name : %s, ", person->name);
+	printf("phone : %s\n", person->phone);
 }
 
 
