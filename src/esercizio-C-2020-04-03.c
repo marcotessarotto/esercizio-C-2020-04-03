@@ -96,10 +96,12 @@ int main(int argc, char *argv[]) {
 }
 
 contact_type * create_contact(char * name, char * phone){
-	contact_type * new_contact;
-	contact_type temp;
-
-	new_contact = &temp;
+	/*
+	 * alloco dinamicamente un nuovo struct di tipo contact_type,
+	 * così che possa essere ritornato senza essere cancellato
+	 * alla fine della funzione create_concat :
+	*/
+	contact_type * new_contact = (contact_type *) malloc(sizeof(contact_type));
 
 	new_contact->id = count;
 	strcpy(new_contact->name, name);
@@ -113,9 +115,9 @@ contact_type * create_contact(char * name, char * phone){
 void print_contact(contact_type * person){
 	printf("\nperson:");
 
-	printf("\tid : %d, ", person->id);
-	printf("name : %s, ", person->name);
-	printf("phone : %s\n", person->phone);
+	printf("\tid = %d, ", person->id);
+	printf("name = %s, ", person->name);
+	printf("phone = %s\n", person->phone);
 }
 
 
