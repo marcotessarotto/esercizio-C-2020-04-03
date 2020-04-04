@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
-#include <signal.h>
-#include <sys/types.h>
 
 #define NAME_LEN 64
 	#define PHONE_LEN 20
