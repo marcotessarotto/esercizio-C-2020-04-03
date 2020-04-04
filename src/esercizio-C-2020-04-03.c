@@ -18,8 +18,9 @@ contact_type * create_contact(char * name, char * phone){
 	contact_type * person=malloc(sizeof(contact_type));
 
 	(*person).id=id;
-	memcpy((*person).name,name,(NAME_LEN + 1) * sizeof(char));
-	memcpy((*person).phone,phone,(PHONE_LEN + 1) * sizeof(char));
+
+	strcpy((*person).name,name);
+	strcpy((*person).phone,phone);
 
 	id++;
 
