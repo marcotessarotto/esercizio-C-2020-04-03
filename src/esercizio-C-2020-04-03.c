@@ -63,6 +63,14 @@ contact_type * create_contact(char * name, char * phone) {
 	// oppure:
 	// result->id = id_counter++;
 
+	/*
+	NB:
+	   result->id = ++id_counter;
+	equivale a:
+	   id_counter++;
+	   result->id = id_counter;
+	 */
+
 	if (name != NULL)
 		strncpy(result->name, name, NAME_LEN);
 
