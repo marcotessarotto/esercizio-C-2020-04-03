@@ -114,7 +114,7 @@ int main(int argc, char *argv[]) {
 	add_to_address_book(chiara);
 
 	if (search_in_address_book(antonio) >= 0)
-		printf("Removed from pos %d\n", remove_from_address_book(antonio));
+		remove_from_address_book(antonio);
 
 	contact_type * pino = create_contact("pino", "+399999");
 	add_to_address_book(pino);
