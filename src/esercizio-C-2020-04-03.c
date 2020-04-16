@@ -84,10 +84,17 @@ int search_in_address_book(contact_type * c)
 	return -1;
 }
 
+// Sorting implemented through "insertion sort"
 void sort_by_name()
 {
 	for (int i = 1; i < ADDRESS_BOOK_SIZE; i++) {
-
+		contact_type * key = address_book[i];
+		int j = i - 1;
+		while (j >= 0 && compare_contacts(address_book[j], key) > 0) {
+			address_book[j + 1] = address_book[j];
+			j--;
+		}
+		address_book[j + 1] = key;
 	}
 }
 
@@ -120,7 +127,7 @@ int main(int argc, char *argv[]) {
 
 	add_to_address_book(antonio);
 
-
+	sort_by_name();
 	puts("Sorted address book:");
 	for (int i = 0; i < ADDRESS_BOOK_SIZE; i++) {
 		if (address_book[i] != NULL)
